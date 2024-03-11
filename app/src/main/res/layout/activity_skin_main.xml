@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".skin.SkinMainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="皮肤检测"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="用皮肤分析仪依次拍摄以下部位"
+        android:textColor="#999999"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+    <ImageView
+        android:id="@+id/iv_face"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/ic_test_face"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/iv_forehead"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_skin_main_face_position_bg"
+        android:gravity="center"
+        android:text="前额"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_face"
+        app:layout_constraintStart_toStartOf="@+id/iv_face"
+        app:layout_constraintTop_toTopOf="@+id/iv_face" />
+
+
+    <TextView
+        android:id="@+id/iv_canthus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_skin_main_face_position_bg"
+        android:gravity="center"
+        android:text="眼角"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toBottomOf="@+id/iv_forehead" />
+
+
+    <TextView
+        android:id="@+id/iv_nose_wing"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_skin_main_face_position_bg"
+        android:gravity="center"
+        android:text="鼻翼"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_face"
+        app:layout_constraintEnd_toEndOf="@+id/iv_face"
+        app:layout_constraintStart_toStartOf="@+id/iv_face"
+        app:layout_constraintTop_toTopOf="@+id/iv_face" />
+
+    <TextView
+        android:id="@+id/iv_cheek"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_skin_main_face_position_bg"
+        android:gravity="center"
+        android:text="脸颊"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_face"
+        app:layout_constraintStart_toStartOf="@+id/iv_face"
+        app:layout_constraintTop_toTopOf="@+id/iv_face" />
+
+
+    <TextView
+        android:id="@+id/iv_mouth_corner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/bg_skin_main_face_position_bg"
+        android:gravity="center"
+        android:text="嘴角"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_face"
+        app:layout_constraintEnd_toEndOf="@+id/iv_face"
+        app:layout_constraintStart_toStartOf="@+id/iv_face"
+        app:layout_constraintTop_toTopOf="@+id/iv_face" />
+
+
+    <TextView
+        android:id="@+id/tv_skin_start"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_skin_start_bg"
+        android:gravity="center"
+        android:text="开始检测"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

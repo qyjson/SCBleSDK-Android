@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.kezong.fat-aar'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "0.0.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true  //混淆打开
+            zipAlignEnabled true  //优化代码
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true  //混淆打开
+            zipAlignEnabled true  //优化代码
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    //不需要把这些架构打进去
+    packagingOptions {
+        exclude 'lib/x86/*.so'
+        exclude 'lib/x86_64/*.so'
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.google.android.material:material:1.2.0'
+    api 'com.squareup.okhttp3:okhttp:3.12.13'
+    api 'com.google.code.gson:gson:2.8.5'
+//    api 'com.squareup.okio:okio:2.2.2'
+    //camera相关依赖
+    def cameraxVersion = "1.1.0-alpha05";
+    implementation "androidx.camera:camera-core:${cameraxVersion}"
+    implementation "androidx.camera:camera-camera2:${cameraxVersion}"
+    implementation "androidx.camera:camera-lifecycle:${cameraxVersion}"
+    implementation 'androidx.camera:camera-view:1.0.0-alpha25'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                //建议和github地址对应，否则对jitpack无效
+                groupId = 'com.github.qyjson'
+                //建议和github仓库名称对应，否则对jitpack无效
+                artifactId = 'SCBleSDK-Android'
+                //建议和release的tag相同，否则对jitpack无效
+                version = '0.0.1'
+            }
+        }
+    }
+}
+
+
+
+
